@@ -1,5 +1,6 @@
 import IconButton from "@/components/ui/icon-button";
 import useCart from "@/hooks/use-cart";
+import { formatter } from "@/libs/utils";
 import { Product } from "@/types";
 import { X } from "lucide-react";
 import Image from "next/image";
@@ -38,6 +39,9 @@ const CartItem: React.FC<CartItemProps> = ({ data }) => {
               {data.size.name}
             </p>
           </div>
+          <p className="text-lg font-semibold text-black">
+            {formatter.format(Number(data.price))}
+          </p>
         </div>
       </div>
     </li>
